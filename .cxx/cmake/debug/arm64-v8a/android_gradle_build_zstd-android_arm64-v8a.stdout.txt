@@ -1,0 +1,8 @@
+[1/8] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/directbuffercompress_zstd.c.o
+[2/8] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/directbufferdecompress_zstd.c.o
+[3/8] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/fast_zstd.c.o
+[4/8] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/inputstream_zstd.c.o
+[5/8] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/outputstream_zstd.c.o
+[6/8] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/zdict.c.o
+[7/8] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/zstd.c.o
+[8/8] Linking C shared library ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libzstd-android.so

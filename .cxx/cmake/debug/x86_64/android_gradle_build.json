@@ -1,0 +1,458 @@
+
+{
+	"buildFiles" : 
+	[
+		"/home/ervinli/workspace/zstd-android/CMakeLists.txt",
+		"/home/ervinli/workspace/zstd-android/thirdparty/zstd/build/cmake/CMakeLists.txt",
+		"/home/ervinli/workspace/zstd-android/thirdparty/zstd/build/cmake/lib/CMakeLists.txt",
+		"/home/ervinli/workspace/zstd-android/thirdparty/zstd/build/cmake/programs/CMakeLists.txt"
+	],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64 --target clean"
+	],
+	"libraries" : 
+	{
+		"libzstd_shared-Debug-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libzstd_shared",
+			"buildCommand" : "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64 --target libzstd_shared",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/entropy_common.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/fse_decompress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/threading.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/pool.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/zstd_common.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/error_private.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/xxhash.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/fse_compress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/huf_compress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_compress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstdmt_compress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_fast.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_double_fast.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_lazy.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_opt.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_ldm.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/decompress/huf_decompress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/decompress/zstd_decompress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/dictBuilder/cover.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/dictBuilder/divsufsort.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/dictBuilder/zdict.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/deprecated/zbuff_common.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/deprecated/zbuff_compress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Dlibzstd_shared_EXPORTS -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/deprecated/zbuff_decompress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				}
+			],
+			"output" : "/home/ervinli/workspace/zstd-android/build/intermediates/cmake/debug/obj/x86_64/libzstd.so",
+			"toolchain" : "11595190852163087269"
+		},
+		"libzstd_static-Debug-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "libzstd_static",
+			"buildCommand" : "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64 --target libzstd_static",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/entropy_common.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/fse_decompress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/threading.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/pool.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/zstd_common.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/error_private.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/common/xxhash.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/fse_compress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/huf_compress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_compress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstdmt_compress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_fast.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_double_fast.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_lazy.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_opt.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/compress/zstd_ldm.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/decompress/huf_decompress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/decompress/zstd_decompress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/dictBuilder/cover.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/dictBuilder/divsufsort.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/dictBuilder/zdict.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/deprecated/zbuff_common.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/deprecated/zbuff_compress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/lib -I../../../../thirdparty/zstd/build/cmake/lib -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/lib/deprecated/zbuff_decompress.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				}
+			],
+			"output" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64/thirdparty/zstd/build/cmake/lib/libzstd.a",
+			"toolchain" : "11595190852163087269"
+		},
+		"zstd-Debug-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "zstd",
+			"buildCommand" : "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64 --target zstd",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/programs -I../../../../thirdparty/zstd/build/cmake/programs -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../programs -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common -I../../../../thirdparty/zstd/build/cmake/../../lib/compress -I../../../../thirdparty/zstd/build/cmake/../../lib/dictBuilder  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/programs/zstdcli.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/programs -I../../../../thirdparty/zstd/build/cmake/programs -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../programs -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common -I../../../../thirdparty/zstd/build/cmake/../../lib/compress -I../../../../thirdparty/zstd/build/cmake/../../lib/dictBuilder  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/programs/fileio.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/programs -I../../../../thirdparty/zstd/build/cmake/programs -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../programs -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common -I../../../../thirdparty/zstd/build/cmake/../../lib/compress -I../../../../thirdparty/zstd/build/cmake/../../lib/dictBuilder  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/programs/bench.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/programs -I../../../../thirdparty/zstd/build/cmake/programs -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../programs -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common -I../../../../thirdparty/zstd/build/cmake/../../lib/compress -I../../../../thirdparty/zstd/build/cmake/../../lib/dictBuilder  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/programs/datagen.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -Ithirdparty/zstd/build/cmake/programs -I../../../../thirdparty/zstd/build/cmake/programs -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../programs -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common -I../../../../thirdparty/zstd/build/cmake/../../lib/compress -I../../../../thirdparty/zstd/build/cmake/../../lib/dictBuilder  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/programs/dibio.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				}
+			],
+			"output" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64/thirdparty/zstd/build/cmake/programs/zstd",
+			"toolchain" : "11595190852163087269"
+		},
+		"zstd-android-Debug-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "zstd-android",
+			"buildCommand" : "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64 --target zstd-android",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dzstd_android_EXPORTS -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/lib  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/src/main/cpp/directbuffercompress_zstd.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dzstd_android_EXPORTS -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/lib  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/src/main/cpp/directbufferdecompress_zstd.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dzstd_android_EXPORTS -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/lib  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/src/main/cpp/fast_zstd.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dzstd_android_EXPORTS -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/lib  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/src/main/cpp/inputstream_zstd.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dzstd_android_EXPORTS -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/lib  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/src/main/cpp/outputstream_zstd.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dzstd_android_EXPORTS -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/lib  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/src/main/cpp/zdict.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dzstd_android_EXPORTS -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/lib  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/src/main/cpp/zstd.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				}
+			],
+			"output" : "/home/ervinli/workspace/zstd-android/build/intermediates/cmake/debug/obj/x86_64/libzstd-android.so",
+			"toolchain" : "11595190852163087269"
+		},
+		"zstd-frugal-Debug-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "zstd-frugal",
+			"buildCommand" : "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64 --target zstd-frugal",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_NOBENCH -DZSTD_NODICT -Ithirdparty/zstd/build/cmake/programs -I../../../../thirdparty/zstd/build/cmake/programs -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../programs -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common -I../../../../thirdparty/zstd/build/cmake/../../lib/compress -I../../../../thirdparty/zstd/build/cmake/../../lib/dictBuilder  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/programs/zstdcli.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				},
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DXXH_NAMESPACE=ZSTD_ -DZSTD_LEGACY_SUPPORT=0 -DZSTD_NOBENCH -DZSTD_NODICT -Ithirdparty/zstd/build/cmake/programs -I../../../../thirdparty/zstd/build/cmake/programs -I../../../../src/main/cpp/include -I../../../../thirdparty/zstd/build/cmake/../../programs -I../../../../thirdparty/zstd/build/cmake/../../lib -I../../../../thirdparty/zstd/build/cmake/../../lib/common -I../../../../thirdparty/zstd/build/cmake/../../lib/compress -I../../../../thirdparty/zstd/build/cmake/../../lib/dictBuilder  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c99 -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/ervinli/workspace/zstd-android/thirdparty/zstd/programs/fileio.c",
+					"workingDirectory" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64"
+				}
+			],
+			"output" : "/home/ervinli/workspace/zstd-android/.cxx/cmake/debug/x86_64/thirdparty/zstd/build/cmake/programs/zstd-frugal",
+			"toolchain" : "11595190852163087269"
+		}
+	},
+	"toolchains" : 
+	{
+		"11595190852163087269" : 
+		{
+			"cCompilerExecutable" : "/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/home/ervinli/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+		}
+	}
+}

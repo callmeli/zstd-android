@@ -1,0 +1,3 @@
+rootProject.name = "zstd-android"
+include ':zstd-lib'
+include ':sample'

@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/home/ervinli/workspace/zstd-android",
+      "sdkFolder": "/home/ervinli/Android/Sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/home/ervinli/workspace/zstd-android/zstd-lib/build/intermediates",
+      "gradleModulePathName": ":zstd-lib",
+      "moduleRootFolder": "/home/ervinli/workspace/zstd-android/zstd-lib",
+      "makeFile": "/home/ervinli/workspace/zstd-android/zstd-lib/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/home/ervinli/workspace/zstd-android/.cxx",
+      "cxxFolder": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx",
+      "ndkFolder": "/home/ervinli/Android/Sdk/ndk/21.3.6528147",
+      "ndkVersion": "21.3.6528147",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      ""
+    ],
+    "variantName": "debug",
+    "soFolder": "/home/ervinli/workspace/zstd-android/zstd-lib/build/intermediates/cmake/debug/lib",
+    "objFolder": "/home/ervinli/workspace/zstd-android/zstd-lib/build/intermediates/cmake/debug/obj",
+    "jsonFolder": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug",
+    "gradleBuildOutputFolder": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cxx/debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "X86_64",
+  "abiPlatformVersion": 16,
+  "cxxBuildFolder": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86_64",
+  "jsonFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86_64/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cxx/debug/x86_64",
+  "objFolder": "/home/ervinli/workspace/zstd-android/zstd-lib/build/intermediates/cmake/debug/obj/x86_64",
+  "buildCommandFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86_64/build_command.txt",
+  "buildOutputFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86_64/build_output.txt",
+  "modelOutputFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86_64/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cxx/debug/x86_64/CMakeLists.txt",
+    "toolchainWrapperFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cxx/debug/x86_64/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cxx/debug/x86_64/build_generation_state.json",
+    "cacheKeyFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cxx/debug/x86_64/compiler_cache_key.json",
+    "compilerCacheUseFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cxx/debug/x86_64/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cxx/debug/x86_64/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cxx/debug/x86_64/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86_64/json_generation_record.json",
+  "compileCommandsJsonFile": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86_64/compile_commands.json"
+}

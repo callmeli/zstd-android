@@ -1,0 +1,43 @@
+{
+  "buildFiles": [
+    "/home/ervinli/workspace/zstd-android/zstd-lib/CMakeLists.txt",
+    "/home/ervinli/workspace/zstd-android/zstd-lib/thirdparty/zstd/build/cmake/CMakeLists.txt",
+    "/home/ervinli/workspace/zstd-android/zstd-lib/thirdparty/zstd/build/cmake/lib/CMakeLists.txt",
+    "/home/ervinli/workspace/zstd-android/zstd-lib/thirdparty/zstd/build/cmake/programs/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86 --target clean"
+  ],
+  "libraries": {
+    "libzstd_shared-Debug-x86": {
+      "artifactName": "libzstd_shared",
+      "buildCommand": "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86 --target libzstd_shared",
+      "abi": "x86",
+      "output": "/home/ervinli/workspace/zstd-android/zstd-lib/build/intermediates/cmake/debug/obj/x86/libzstd.so"
+    },
+    "zstd-Debug-x86": {
+      "artifactName": "zstd",
+      "buildCommand": "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86 --target zstd",
+      "abi": "x86",
+      "output": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86/thirdparty/zstd/build/cmake/programs/zstd"
+    },
+    "libzstd_static-Debug-x86": {
+      "artifactName": "libzstd_static",
+      "buildCommand": "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86 --target libzstd_static",
+      "abi": "x86",
+      "output": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86/thirdparty/zstd/build/cmake/lib/libzstd.a"
+    },
+    "zstd-frugal-Debug-x86": {
+      "artifactName": "zstd-frugal",
+      "buildCommand": "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86 --target zstd-frugal",
+      "abi": "x86",
+      "output": "/home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86/thirdparty/zstd/build/cmake/programs/zstd-frugal"
+    },
+    "zstd-android-Debug-x86": {
+      "artifactName": "zstd-android",
+      "buildCommand": "/home/ervinli/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ervinli/workspace/zstd-android/zstd-lib/.cxx/cmake/debug/x86 --target zstd-android",
+      "abi": "x86",
+      "output": "/home/ervinli/workspace/zstd-android/zstd-lib/build/intermediates/cmake/debug/obj/x86/libzstd-android.so"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+[1/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/common/fse_decompress.c.o
+[2/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/common/pool.c.o
+[3/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/common/entropy_common.c.o
+[4/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/common/threading.c.o
+[5/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/common/xxhash.c.o
+[6/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/common/zstd_common.c.o
+[7/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/common/error_private.c.o
+[8/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/compress/fse_compress.c.o
+[9/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/compress/huf_compress.c.o
+[10/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/compress/zstd_compress.c.o
+[11/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/compress/zstdmt_compress.c.o
+[12/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/compress/zstd_fast.c.o
+[13/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/compress/zstd_double_fast.c.o
+[14/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/compress/zstd_lazy.c.o
+[15/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/compress/zstd_opt.c.o
+[16/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/compress/zstd_ldm.c.o
+[17/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/decompress/huf_decompress.c.o
+[18/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/decompress/zstd_decompress.c.o
+[19/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/dictBuilder/cover.c.o
+[20/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/dictBuilder/divsufsort.c.o
+[21/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/dictBuilder/zdict.c.o
+[22/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/deprecated/zbuff_common.c.o
+[23/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/deprecated/zbuff_compress.c.o
+[24/33] Building C object thirdparty/zstd/build/cmake/lib/CMakeFiles/libzstd_shared.dir/__/__/__/lib/deprecated/zbuff_decompress.c.o
+[25/33] Linking C shared library ../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libzstd.so
+[26/33] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/directbuffercompress_zstd.c.o
+[27/33] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/directbufferdecompress_zstd.c.o
+[28/33] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/fast_zstd.c.o
+[29/33] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/inputstream_zstd.c.o
+[30/33] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/outputstream_zstd.c.o
+[31/33] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/zdict.c.o
+[32/33] Building C object CMakeFiles/zstd-android.dir/src/main/cpp/zstd.c.o
+[33/33] Linking C shared library ../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libzstd-android.so
