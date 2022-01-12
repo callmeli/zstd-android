@@ -1,7 +1,7 @@
 target/
 *.swp
 *.o
-
+.idea/
 # Created by https://www.gitignore.io/api/android
 
 ### Android ###
