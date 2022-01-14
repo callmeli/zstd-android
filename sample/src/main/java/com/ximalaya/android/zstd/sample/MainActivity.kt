@@ -3,32 +3,49 @@ package com.ximalaya.android.zstd.sample
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
+import android.util.Log
+import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.monstertoss.zstd_android.Zstd
 import com.monstertoss.zstd_android.ZstdInputStream
 import com.monstertoss.zstd_android.ZstdOutputStream
 import okhttp3.*
+import okhttp3.internal.http.HttpHeaders
 import okhttp3.internal.http.RealResponseBody
+import okio.GzipSource
 import okio.Okio
 import java.io.*
-import java.nio.ByteBuffer
+import java.math.BigInteger
+import java.security.MessageDigest
 
-class MainActivity : AppCompatActivity() {
+const val ZSTD = "zstd"
+const val GZIP = "gzip"
+
+class MainActivity : IFileKeeper, AppCompatActivity() {
     val testUrl =
         "http://192.168.3.52:3238/ad-exchange/ting/loading/ts-1641785674047?appid=0&device=iPhone&idfaLimit=1&name=loading_v2&network=WIFI&operator=3&osUpdateTime=1601020993.539255&positionId=1&preRequestAdIds=&scale=3&secure=0&startType=0&systemIDFA=C6C6906F-5F97-4B5A-96DC-8545AB31B877&version=9.0.12&xt=1641785674048"
     val testContent =
         "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901"
     val okHttpClient: OkHttpClient by lazy {
-        OkHttpClient().newBuilder().addInterceptor(ZstdDecompress(dictContent)).build()
+        OkHttpClient().newBuilder().addInterceptor(
+            ZstdDecompress(
+                decompressDict = dictContent,
+                fileKeeper = this@MainActivity
+            )
+        ).build()
+    }
+
+    val cacheSavePath by lazy {
+        filesDir.absolutePath
     }
 
     val dictContent: ByteArray by lazy {
         assets.open("dict_1").readBytes()
     }
     val testAssets: String by lazy {
-       String( assets.open("test").readBytes())
+        String(assets.open("test").readBytes())
     }
 
     val resultTv: TextView by lazy {
@@ -41,6 +58,9 @@ class MainActivity : AppCompatActivity() {
 //        testZstdFile()
 //        Toast.makeText(this, "assets toast${testAssets}", Toast.LENGTH_SHORT).show()
         httpTest()
+        findViewById<View>(R.id.tv_test_decompress).setOnClickListener {
+            testDecompress(dictContent)
+        }
     }
 
     private fun httpTest() {
@@ -51,6 +71,37 @@ class MainActivity : AppCompatActivity() {
                 runOnUiThread {
                     resultTv.text =
                         "error:$e"
+                    Log.e(
+                        ZSTD,
+                        "error:$e"
+                    )
+                }
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val headers = response.headers().toString()
+                val result = response.body()?.string()
+                runOnUiThread {
+//                    resultTv.text =
+//                        "contentType:$headers$result"
+                    Log.e(
+                        ZSTD,
+                        "contentType:$headers$result"
+                    )
+                }
+            }
+
+        })
+
+        okHttpClient.newCall(
+            Request.Builder().url(testUrl).header("Accept-Encoding", "gzip,deflate").build()
+        ).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                runOnUiThread {
+                    Log.e(
+                        GZIP,
+                        "error:$e"
+                    )
                 }
             }
 
@@ -60,6 +111,7 @@ class MainActivity : AppCompatActivity() {
                 runOnUiThread {
                     resultTv.text =
                         "contentType:$headers$result"
+                    Log.e(GZIP, "contentType:$headers$result")
                 }
             }
 
@@ -71,23 +123,53 @@ class MainActivity : AppCompatActivity() {
         cost { testOutput(destFilePath, testContent.encodeToByteArray()) }
         cost { testInput(destFilePath) }
 
-
     }
 
-    class ZstdDecompress(val dict: ByteArray) : Interceptor {
+    class ZstdDecompress(
+        var saveDecompressResponse: Boolean = true,
+        var saveCompressResponse: Boolean = true,
+        val decompressDict: ByteArray,
+        val fileKeeper: IFileKeeper
+    ) : Interceptor {
+
         override fun intercept(chain: Interceptor.Chain): Response {
-            val response = chain.proceed(chain.request())
+            var response = chain.proceed(chain.request())
             val encode = response.header("content-encoding")
-            if (encode.equals("zstd")) {
+            if (encode.equals(ZSTD)) {
+                val name = BigInteger(
+                    1, MessageDigest.getInstance("MD5")
+                        .digest(chain.request().url().toString().toByteArray())
+                ).toString(16)
                 val responseBuilder = response.newBuilder()
-                val conentLen = response.header("Content-Length")
                 val inputBytes = response.body()?.bytes()
                 val strippedHeaders: Headers = response.headers().newBuilder()
                     .removeAll("Content-Encoding")
-                    .removeAll("Content-Length")
                     .build()
+                saveCompressResponse.takeIf { it }.let {
+                    if (inputBytes != null) {
+                        fileKeeper.save(
+                            fileKeeper.cacheDir() + "/" + ZSTD + "/compress_${name}",
+                            inputBytes.copyOf()
+                        )
+                    }
+                }
+
                 val result =
-                    Zstd.decompress(inputBytes, dict, Zstd.decompressedSize(inputBytes).toInt())
+                    cost {
+                        Zstd.decompress(
+                            inputBytes,
+                            decompressDict,
+                            Zstd.decompressedSize(inputBytes).toInt()
+                        )
+                    } as ByteArray
+                saveDecompressResponse.takeIf { it }.let {
+                    if (inputBytes != null) {
+                        fileKeeper.save(
+                            fileKeeper.cacheDir() + "/" + ZSTD + "/decompress_${name}",
+                            inputBytes.copyOf()
+                        )
+                    }
+                }
                 val contentType: String? = response.header("Content-Type")
                 responseBuilder.headers(strippedHeaders)
                 responseBuilder.body(
@@ -98,6 +180,36 @@ class MainActivity : AppCompatActivity() {
                     )
                 )
                 return responseBuilder.build()
+            } else if (encode.equals(GZIP)) {
+                val responseBuilder: Response.Builder = response.newBuilder()
+                    .request(chain.request())
+                if (HttpHeaders.hasBody(response)
+                ) {
+                    val name = BigInteger(
+                        1, MessageDigest.getInstance("MD5")
+                            .digest(chain.request().url().toString().toByteArray())
+                    ).toString(16)
+                    val source = response.body()!!.source()
+                    fileKeeper.save(
+                        fileKeeper.cacheDir() + "/" + GZIP + "/compress_${name}",
+                        source.readByteArray().copyOf()
+                    )
+                    val responseBody = GzipSource(response.body()!!.source())
+                    val strippedHeaders: Headers = response.headers().newBuilder()
+                        .removeAll("Content-Encoding")
+                        .removeAll("Content-Length")
+                        .build()
+                    responseBuilder.headers(strippedHeaders)
+                    val contentType: String? = response.header("Content-Type")
+                    responseBuilder.body(
+                        RealResponseBody(
+                            contentType,
+                            -1L,
+                            Okio.buffer(responseBody)
+                        )
+                    )
+                    return responseBuilder.build()
+                }
             }
             return response
         }
@@ -143,15 +255,120 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun save(path: String, data: ByteArray) {
+        File(path).takeIf { !it.exists() }?.let {
+            if (!it.parentFile.exists()) {
+                it.parentFile.mkdirs()
+            }
+            var outputStream: FileOutputStream? = null
+            try {
+                outputStream = FileOutputStream(it)
+                outputStream.write(data)
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } finally {
+                outputStream?.apply { close() }
+            }
+        }
+    }
+
+    override fun get(path: String): InputStream? {
+        return File(path).takeIf { it.exists() }?.let { FileInputStream(it) }
+    }
+
+    override fun cached(path: String): Boolean {
+        return File(path).exists()
+    }
+
+    override fun cacheDir(): String {
+        return cacheSavePath
+    }
+
+    fun testDecompress(dict: ByteArray?, testTimes: Int = 10000) {
+        val compressList = ArrayList<String>()
+        Log.e("cost", ZSTD)
+        val parentDir = "$cacheSavePath/$ZSTD"
+        File(parentDir).list().takeIf { it.isNotEmpty() }?.forEach {
+            it.takeIf { it.startsWith("compress_") }
+                ?.let { path -> compressList.add(File(parentDir, path).absolutePath) }
+        }
+        compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
+            cost {
+                for (i in 0..testTimes) {
+                    item.zstdDecompress(dict)
+                }
+            }
+        }
+        compressList.clear()
+        val gzipDir = "$cacheSavePath/$GZIP"
+        File(gzipDir).list().takeIf { it.isNotEmpty() }?.forEach {
+            it.takeIf { it.startsWith("compress_") }
+                ?.let { path -> compressList.add(File(gzipDir, path).absolutePath) }
+        }
+        Log.e("cost", GZIP)
+        compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
+            cost {
+                for (i in 0..testTimes) {
+                    val gzipSource = Okio.buffer(GzipSource(Okio.source(FileInputStream(item))))
+                    gzipSource.readByteArray()
+                    gzipSource.close()
+                }
+            }
+        }
+    }
+
 }
 
-fun Any.cost(method: () -> Any) {
-    val start = System.currentTimeMillis()
+fun Any.cost(method: () -> Any): Any {
+    val start = SystemClock.currentThreadTimeMillis()
     val result = method()
-    println("${method.hashCode()},cost:${System.currentTimeMillis() - start},result:${result}")
+    Log.e("cost", "$method,cost:${SystemClock.currentThreadTimeMillis() - start},result:${result}")
+    return result
 }
 
 val handler = Handler(Looper.getMainLooper())
 fun Any.runOnUiThread(method: () -> Unit) {
     handler.post(method)
+}
+
+fun String.zstdDecompress(dict: ByteArray? = null): ByteArray? {
+    var byteArray: ByteArray? = null
+    val file = File(this)
+    val len = file.takeIf { it.exists() }?.length() ?: -1
+    if (len <= 0) {
+        return byteArray
+    }
+    dict?.let {
+        var inputStream: FileInputStream? = null
+        try {
+            inputStream = FileInputStream(this)
+            val bytes = inputStream!!.readBytes()
+            val dstBytes = ByteArray(Zstd.decompressedSize(bytes).toInt())
+            Zstd.decompress(dstBytes, bytes, it)
+            return dstBytes
+        } catch (e: Exception) {
+            throw e
+        } finally {
+            inputStream?.apply { close() }
+        }
+        return null
+    }
+
+    var inputStream: ZstdInputStream? = null
+    try {
+        inputStream = ZstdInputStream(FileInputStream(this))
+        byteArray = inputStream!!.readBytes()
+    } catch (e: Exception) {
+        e.printStackTrace()
+    } finally {
+        inputStream?.apply { close() }
+    }
+    return byteArray
+}
+
+interface IFileKeeper {
+    fun save(path: String, data: ByteArray)
+    fun get(path: String): InputStream?
+    fun cached(path: String): Boolean
+    fun cacheDir(): String
 }
