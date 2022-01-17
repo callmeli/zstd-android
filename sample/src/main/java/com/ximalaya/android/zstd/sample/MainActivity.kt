@@ -6,6 +6,7 @@ import android.os.Looper
 import android.os.SystemClock
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -57,46 +58,25 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        testZstdFile()
-//        Toast.makeText(this, "assets toast${testAssets}", Toast.LENGTH_SHORT).show()
-        httpTest()
+        findViewById<View>(R.id.tv_test_common).setOnClickListener {
+            testZstdFile()
+        }
+        findViewById<View>(R.id.tv_test_dict_http).setOnClickListener {
+            httpTest("gzip,deflate,zstd")
+        }
+        findViewById<View>(R.id.tv_test_gzip_http).setOnClickListener {
+            httpTest()
+        }
         findViewById<View>(R.id.tv_test_decompress).setOnClickListener {
-            testDecompress(dictContent)
+            val etTimes = findViewById<EditText>(R.id.et_decompress_times)
+            val times = etTimes.text.toString()
+            testDecompress(dictContent, Integer.parseInt(times))
         }
     }
 
-    private fun httpTest() {
+    private fun httpTest(encodingType:String = "gzip, deflate") {
         okHttpClient.newCall(
-            Request.Builder().url(testUrl).header("Accept-Encoding", "gzip,deflate,zstd").build()
-        ).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                runOnUiThread {
-                    resultTv.text =
-                        "error:$e"
-                    Log.e(
-                        ZSTD,
-                        "error:$e"
-                    )
-                }
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                val headers = response.headers().toString()
-                val result = response.body()?.string()
-                runOnUiThread {
-//                    resultTv.text =
-//                        "contentType:$headers$result"
-                    Log.e(
-                        ZSTD,
-                        "contentType:$headers$result"
-                    )
-                }
-            }
-
-        })
-
-        okHttpClient.newCall(
-            Request.Builder().url(testUrl).header("Accept-Encoding", "gzip, deflate").build()
+            Request.Builder().url(testUrl).header("Accept-Encoding", encodingType).build()
         ).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 runOnUiThread {
@@ -122,9 +102,10 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
 
     private fun testZstdFile() {
         val destFilePath = File(filesDir.absolutePath, "ztsd.txt").absolutePath
-        cost { testOutput(destFilePath, testContent.encodeToByteArray()) }
-        cost { testInput(destFilePath) }
-
+        val compress = cost { testOutput(destFilePath, testContent.encodeToByteArray()) }
+        val deCompress = cost { testInput(destFilePath) }
+        resultTv.text =
+            "compress:$compress,\nDecompress:$deCompress"
     }
 
     class ZstdDecompress(
@@ -157,13 +138,11 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                 }
 
                 val result =
-                    cost {
-                        Zstd.decompress(
-                            inputBytes,
-                            decompressDict,
-                            Zstd.decompressedSize(inputBytes).toInt()
-                        )
-                    } as ByteArray
+                    Zstd.decompress(
+                        inputBytes,
+                        decompressDict,
+                        Zstd.decompressedSize(inputBytes).toInt()
+                    )
                 saveDecompressResponse.takeIf { it }.let {
                     if (inputBytes != null) {
                         fileKeeper.save(
@@ -233,7 +212,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
         } finally {
             outputStream?.apply { close() }
             val file = File(filePath)
-            return if (file.exists() && file.length() > 0) "src:$len,dest:${file.length()}，ratio:${
+            return if (file.exists() && file.length() > 0) "src:$len,dest:${file.length()},ratio:${
                 len / file.length().toFloat()
             }" else "file not exists"
         }
@@ -254,7 +233,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
             e.printStackTrace()
         } finally {
             inputStream?.apply { close() }
-            return byteArray?.let { "src:$len,dest:${it.size}，ratio:${it.size / len.toFloat()}" }
+            return byteArray?.let { "src:$len,dest:${it.size},ratio:${it.size / len.toFloat()}" }
                 ?: "file read failed"
         }
     }
@@ -297,7 +276,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                 ?.let { path -> compressList.add(File(parentDir, path).absolutePath) }
         }
         var zstdContent: String? = null
-        compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
+        val zstdCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
             cost {
                 for (i in 0..testTimes) {
                     if (zstdContent == null) {
@@ -316,7 +295,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
         }
         Log.e("cost", GZIP)
         var contentGzip: String? = null
-        compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
+        val gzipCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
             cost {
                 for (i in 0..testTimes) {
                     if (contentGzip == null) {
@@ -332,11 +311,9 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                 }
             }
         }
-        Toast.makeText(
-            MainActivity@ this,
-            contentGzip?.takeIf { it.equals(zstdContent) }.let { "内容相同" } ?: "不相同内容 ${contentGzip} ${zstdContent}",
-            Toast.LENGTH_SHORT
-        ).show()
+        val sameResult =
+            "解析结果内容是否相同\n${zstdContent?.equals(contentGzip)}\n长度\nzstdContent:${zstdContent?.length},contentGzip:${contentGzip?.length}\nzstdContent:\n$zstdContent \n\ncontentGzip:\n$contentGzip "
+        resultTv.text = "zstdCost:$zstdCost,gzipCost:$gzipCost\n$sameResult}"
     }
 
 }
@@ -344,8 +321,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
 fun Any.cost(method: () -> Any): Any {
     val start = SystemClock.currentThreadTimeMillis()
     val result = method()
-    Log.e("cost", "$method,cost:${SystemClock.currentThreadTimeMillis() - start},result:${result}")
-    return result
+    return arrayListOf(SystemClock.currentThreadTimeMillis() - start, result)
 }
 
 val handler = Handler(Looper.getMainLooper())

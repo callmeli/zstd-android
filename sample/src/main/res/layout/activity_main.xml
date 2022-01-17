@@ -15,41 +15,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:text="@string/zstd_common"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <RadioButton
-                    android:text="@string/zstd_common"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </RadioGroup>
             <TextView
                 android:id="@+id/tv_test_common"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:textColor="@color/white"
+                android:background="@color/teal_200"
                 android:text="@string/zstd_common" />
 
             <TextView
                 android:id="@+id/tv_test_dict_http"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:padding="20dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:background="@color/teal_200"
                 android:layout_height="wrap_content"
                 android:text="@string/zstd_http" />
 
+            <TextView
+                android:id="@+id/tv_test_gzip_http"
+                android:layout_width="wrap_content"
+                android:padding="20dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:background="@color/teal_200"
+                android:layout_height="wrap_content"
+                android:text="@string/zstd_gzip" />
+
             <EditText
+                android:id="@+id/et_decompress_times"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="输入解密次数"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
                 android:text="10000" />
 
             <TextView
                 android:id="@+id/tv_test_decompress"
-                android:layout_width="match_parent"
+                android:padding="20dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:background="@color/teal_200"
                 android:text="@string/zstd_dict_decompress" />
 
             <TextView

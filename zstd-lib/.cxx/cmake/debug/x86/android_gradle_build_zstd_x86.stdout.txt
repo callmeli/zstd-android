@@ -36,7 +36,7 @@ In file included from /home/ervinli/workspace/zstd-android/zstd-lib/thirdparty/z
 #elif (PLATFORM_POSIX_VERSION >= 200112L) && (defined __UCLIBC__ || ((__GLIBC__ == 2 && __GLIBC_MINOR__ >= 17) || __GLIBC__ > 2))
                                                                                                                   ^
 2 warnings generated.
-In file included from /home/ervinli/workspace/zstd-android/zstd-lib/thirdparty/zstd/programs/zstdcli.c:29:
+In file included from /home/ervinli/workspace/zstd-android/zstd-lib/thirdparty/zstd/programs/bench.c:33:
 ../../../../thirdparty/zstd/build/cmake/../../programs/util.h:170:71: warning: '__GLIBC__' is not defined, evaluates to 0 [-Wundef]
 #elif (PLATFORM_POSIX_VERSION >= 200112L) && (defined __UCLIBC__ || ((__GLIBC__ == 2 && __GLIBC_MINOR__ >= 17) || __GLIBC__ > 2))
                                                                       ^
@@ -44,7 +44,7 @@ In file included from /home/ervinli/workspace/zstd-android/zstd-lib/thirdparty/z
 #elif (PLATFORM_POSIX_VERSION >= 200112L) && (defined __UCLIBC__ || ((__GLIBC__ == 2 && __GLIBC_MINOR__ >= 17) || __GLIBC__ > 2))
                                                                                                                   ^
 2 warnings generated.
-In file included from /home/ervinli/workspace/zstd-android/zstd-lib/thirdparty/zstd/programs/bench.c:33:
+In file included from /home/ervinli/workspace/zstd-android/zstd-lib/thirdparty/zstd/programs/zstdcli.c:29:
 ../../../../thirdparty/zstd/build/cmake/../../programs/util.h:170:71: warning: '__GLIBC__' is not defined, evaluates to 0 [-Wundef]
 #elif (PLATFORM_POSIX_VERSION >= 200112L) && (defined __UCLIBC__ || ((__GLIBC__ == 2 && __GLIBC_MINOR__ >= 17) || __GLIBC__ > 2))
                                                                       ^
