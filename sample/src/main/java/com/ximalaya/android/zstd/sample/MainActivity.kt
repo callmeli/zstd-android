@@ -13,6 +13,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.monstertoss.zstd_android.Zstd
 import com.monstertoss.zstd_android.ZstdInputStream
 import com.monstertoss.zstd_android.ZstdOutputStream
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import okhttp3.*
 import okhttp3.internal.http.HttpHeaders
 import okhttp3.internal.http.RealResponseBody
@@ -74,7 +78,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
         }
     }
 
-    private fun httpTest(encodingType:String = "gzip, deflate") {
+    private fun httpTest(encodingType: String = "gzip, deflate") {
         okHttpClient.newCall(
             Request.Builder().url(testUrl).header("Accept-Encoding", encodingType).build()
         ).enqueue(object : Callback {
@@ -268,52 +272,58 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
     }
 
     fun testDecompress(dict: ByteArray?, testTimes: Int = 10000) {
-        val compressList = ArrayList<String>()
-        Log.e("cost", ZSTD)
-        val parentDir = "$cacheSavePath/$ZSTD"
-        File(parentDir).list().takeIf { it.isNotEmpty() }?.forEach {
-            it.takeIf { it.startsWith("compress_") }
-                ?.let { path -> compressList.add(File(parentDir, path).absolutePath) }
-        }
-        var zstdContent: String? = null
-        val zstdCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
-            cost {
-                for (i in 0..testTimes) {
-                    if (zstdContent == null) {
-                        zstdContent = item.zstdDecompress(dict)?.let { String(it) }
-                    } else {
-                        item.zstdDecompress(dict)
+        GlobalScope.launch(Dispatchers.IO) {
+            val compressList = ArrayList<String>()
+            Log.e("cost", ZSTD)
+            val parentDir = "$cacheSavePath/$ZSTD"
+            File(parentDir).list().takeIf { it.isNotEmpty() }?.forEach {
+                it.takeIf { it.startsWith("compress_") }
+                    ?.let { path -> compressList.add(File(parentDir, path).absolutePath) }
+            }
+            var zstdContent: String? = null
+            val zstdCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
+                cost {
+                    for (i in 0..testTimes) {
+                        if (zstdContent == null) {
+                            zstdContent = item.zstdDecompress(dict)?.let { String(it) }
+                        } else {
+                            item.zstdDecompress(dict)
+                        }
                     }
                 }
             }
-        }
-        compressList.clear()
-        val gzipDir = "$cacheSavePath/$GZIP"
-        File(gzipDir).list().takeIf { it.isNotEmpty() }?.forEach {
-            it.takeIf { it.startsWith("compress_") }
-                ?.let { path -> compressList.add(File(gzipDir, path).absolutePath) }
-        }
-        Log.e("cost", GZIP)
-        var contentGzip: String? = null
-        val gzipCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
-            cost {
-                for (i in 0..testTimes) {
-                    if (contentGzip == null) {
-                        val gzipSource = Okio.buffer(GzipSource(Okio.source(FileInputStream(item))))
-                        contentGzip = String(gzipSource.readByteArray())
-                        gzipSource.close()
-                    } else {
-                        val gzipSource = Okio.buffer(GzipSource(Okio.source(FileInputStream(item))))
-                        gzipSource.readByteArray()
-                        gzipSource.close()
-                    }
+            compressList.clear()
+            val gzipDir = "$cacheSavePath/$GZIP"
+            File(gzipDir).list().takeIf { it.isNotEmpty() }?.forEach {
+                it.takeIf { it.startsWith("compress_") }
+                    ?.let { path -> compressList.add(File(gzipDir, path).absolutePath) }
+            }
+            Log.e("cost", GZIP)
+            var contentGzip: String? = null
+            val gzipCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
+                cost {
+                    for (i in 0..testTimes) {
+                        if (contentGzip == null) {
+                            val gzipSource =
+                                Okio.buffer(GzipSource(Okio.source(FileInputStream(item))))
+                            contentGzip = String(gzipSource.readByteArray())
+                            gzipSource.close()
+                        } else {
+                            val gzipSource =
+                                Okio.buffer(GzipSource(Okio.source(FileInputStream(item))))
+                            gzipSource.readByteArray()
+                            gzipSource.close()
+                        }
 
+                    }
                 }
             }
+            val sameResult =
+                "解析结果内容是否相同\n${zstdContent?.equals(contentGzip)}\n长度\nzstdContent:${zstdContent?.length},contentGzip:${contentGzip?.length}\nzstdContent:\n$zstdContent \n\ncontentGzip:\n$contentGzip "
+            withContext(Dispatchers.Main) {
+                resultTv.text = "zstdCost:$zstdCost,gzipCost:$gzipCost\n$sameResult}"
+            }
         }
-        val sameResult =
-            "解析结果内容是否相同\n${zstdContent?.equals(contentGzip)}\n长度\nzstdContent:${zstdContent?.length},contentGzip:${contentGzip?.length}\nzstdContent:\n$zstdContent \n\ncontentGzip:\n$contentGzip "
-        resultTv.text = "zstdCost:$zstdCost,gzipCost:$gzipCost\n$sameResult}"
     }
 
 }
