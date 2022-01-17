@@ -7,6 +7,7 @@ import android.os.SystemClock
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.monstertoss.zstd_android.Zstd
 import com.monstertoss.zstd_android.ZstdInputStream
@@ -16,6 +17,7 @@ import okhttp3.internal.http.HttpHeaders
 import okhttp3.internal.http.RealResponseBody
 import okio.GzipSource
 import okio.Okio
+import okio.Source
 import java.io.*
 import java.math.BigInteger
 import java.security.MessageDigest
@@ -94,7 +96,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
         })
 
         okHttpClient.newCall(
-            Request.Builder().url(testUrl).header("Accept-Encoding", "gzip,deflate").build()
+            Request.Builder().url(testUrl).header("Accept-Encoding", "gzip, deflate").build()
         ).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 runOnUiThread {
@@ -185,16 +187,18 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                     .request(chain.request())
                 if (HttpHeaders.hasBody(response)
                 ) {
-                    val name = BigInteger(
-                        1, MessageDigest.getInstance("MD5")
-                            .digest(chain.request().url().toString().toByteArray())
-                    ).toString(16)
                     val source = response.body()!!.source()
-                    fileKeeper.save(
-                        fileKeeper.cacheDir() + "/" + GZIP + "/compress_${name}",
-                        source.readByteArray().copyOf()
-                    )
-                    val responseBody = GzipSource(response.body()!!.source())
+                    val responseBody: Source = GzipSource(source)
+                    saveCompressResponse.takeIf { it }.let {
+                        val name = BigInteger(
+                            1, MessageDigest.getInstance("MD5")
+                                .digest(chain.request().url().toString().toByteArray())
+                        ).toString(16)
+                        fileKeeper.save(
+                            fileKeeper.cacheDir() + "/" + GZIP + "/compress_${name}",
+                            source.buffer().clone().readByteArray()
+                        )
+                    }
                     val strippedHeaders: Headers = response.headers().newBuilder()
                         .removeAll("Content-Encoding")
                         .removeAll("Content-Length")
@@ -208,7 +212,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                             Okio.buffer(responseBody)
                         )
                     )
-                    return responseBuilder.build()
+                    response = responseBuilder.build()
                 }
             }
             return response
@@ -292,10 +296,15 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
             it.takeIf { it.startsWith("compress_") }
                 ?.let { path -> compressList.add(File(parentDir, path).absolutePath) }
         }
+        var zstdContent: String? = null
         compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
             cost {
                 for (i in 0..testTimes) {
-                    item.zstdDecompress(dict)
+                    if (zstdContent == null) {
+                        zstdContent = item.zstdDecompress(dict)?.let { String(it) }
+                    } else {
+                        item.zstdDecompress(dict)
+                    }
                 }
             }
         }
@@ -306,15 +315,28 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                 ?.let { path -> compressList.add(File(gzipDir, path).absolutePath) }
         }
         Log.e("cost", GZIP)
+        var contentGzip: String? = null
         compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
             cost {
                 for (i in 0..testTimes) {
-                    val gzipSource = Okio.buffer(GzipSource(Okio.source(FileInputStream(item))))
-                    gzipSource.readByteArray()
-                    gzipSource.close()
+                    if (contentGzip == null) {
+                        val gzipSource = Okio.buffer(GzipSource(Okio.source(FileInputStream(item))))
+                        contentGzip = String(gzipSource.readByteArray())
+                        gzipSource.close()
+                    } else {
+                        val gzipSource = Okio.buffer(GzipSource(Okio.source(FileInputStream(item))))
+                        gzipSource.readByteArray()
+                        gzipSource.close()
+                    }
+
                 }
             }
         }
+        Toast.makeText(
+            MainActivity@ this,
+            contentGzip?.takeIf { it.equals(zstdContent) }.let { "内容相同" } ?: "不相同内容 ${contentGzip} ${zstdContent}",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
 }
