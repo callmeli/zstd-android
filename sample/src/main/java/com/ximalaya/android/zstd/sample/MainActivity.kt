@@ -281,11 +281,16 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                     ?.let { path -> compressList.add(File(parentDir, path).absolutePath) }
             }
             var zstdContent: String? = null
+            var zstdRatio = 0
             val zstdCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
                 cost {
                     for (i in 0..testTimes) {
                         if (zstdContent == null) {
-                            zstdContent = item.zstdDecompress(dict)?.let { String(it) }
+                            val sizeList = ArrayList<Int>()
+                            zstdContent = item.zstdDecompress(dict, sizeList)?.let { String(it) }
+                            zstdRatio = sizeList.takeIf { it.size == 2 }.let {
+                                sizeList[1] / sizeList[0]
+                            }
                         } else {
                             item.zstdDecompress(dict)
                         }
@@ -300,13 +305,19 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
             }
             Log.e("cost", GZIP)
             var contentGzip: String? = null
+            var gzipRatio = 0
             val gzipCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
                 cost {
                     for (i in 0..testTimes) {
                         if (contentGzip == null) {
+                            val inputStream = FileInputStream(item)
+                            val inputByteArray = inputStream.readBytes()
+                            inputStream.close()
                             val gzipSource =
-                                Okio.buffer(GzipSource(Okio.source(FileInputStream(item))))
-                            contentGzip = String(gzipSource.readByteArray())
+                                Okio.buffer(GzipSource(Okio.source(ByteArrayInputStream(inputByteArray))))
+                            val byteArray = gzipSource.readByteArray()
+                            contentGzip = String(byteArray)
+                            gzipRatio = byteArray.size/inputByteArray.size
                             gzipSource.close()
                         } else {
                             val gzipSource =
@@ -314,14 +325,13 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                             gzipSource.readByteArray()
                             gzipSource.close()
                         }
-
                     }
                 }
             }
             val sameResult =
                 "解析结果内容是否相同\n${zstdContent?.equals(contentGzip)}\n长度\nzstdContent:${zstdContent?.length},contentGzip:${contentGzip?.length}\nzstdContent:\n$zstdContent \n\ncontentGzip:\n$contentGzip "
             withContext(Dispatchers.Main) {
-                resultTv.text = "zstdCost:$zstdCost,gzipCost:$gzipCost\n$sameResult}"
+                resultTv.text = "zstdCost:$zstdCost zstdRatio:$zstdRatio,\ngzipCost:$gzipCost gzipRatio:$gzipRatio\n$sameResult}"
             }
         }
     }
@@ -339,7 +349,10 @@ fun Any.runOnUiThread(method: () -> Unit) {
     handler.post(method)
 }
 
-fun String.zstdDecompress(dict: ByteArray? = null): ByteArray? {
+fun String.zstdDecompress(
+    dict: ByteArray? = null,
+    inputOutputLen: ArrayList<Int>? = null
+): ByteArray? {
     var byteArray: ByteArray? = null
     val file = File(this)
     val len = file.takeIf { it.exists() }?.length() ?: -1
@@ -351,8 +364,10 @@ fun String.zstdDecompress(dict: ByteArray? = null): ByteArray? {
         try {
             inputStream = FileInputStream(this)
             val bytes = inputStream!!.readBytes()
+            inputOutputLen?.add(bytes.size)
             val dstBytes = ByteArray(Zstd.decompressedSize(bytes).toInt())
             Zstd.decompress(dstBytes, bytes, it)
+            inputOutputLen?.add(dstBytes.size)
             return dstBytes
         } catch (e: Exception) {
             throw e
