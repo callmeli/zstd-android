@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Sample</string>
     <string name="zstd_common">本地zstd加解密</string>
-    <string name="zstd_http">zstd请求接口</string>
+    <string name="zstd_dict_http">zstd字典请求接口</string>
+    <string name="zstd_http">zstd标准请求接口</string>
     <string name="zstd_gzip">gzip请求接口</string>
     <string name="zstd_dict_decompress">本地结果通过gzip及zstd解密效率对比</string>
 </resources>
