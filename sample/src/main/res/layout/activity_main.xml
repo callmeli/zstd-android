@@ -35,6 +35,15 @@
                 android:text="@string/zstd_dict_http" />
 
             <TextView
+                android:id="@+id/tv_test_dict_result_save_std"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="20dp"
+                android:textColor="@color/white"
+                android:background="@color/teal_200"
+                android:text="@string/zstd_save_dict_to_zstd" />
+            <TextView
                 android:id="@+id/tv_test_zstd_http"
                 android:layout_width="wrap_content"
                 android:padding="20dp"
@@ -43,7 +52,6 @@
                 android:background="@color/teal_200"
                 android:layout_height="wrap_content"
                 android:text="@string/zstd_http" />
-
             <TextView
                 android:id="@+id/tv_test_gzip_http"
                 android:layout_width="wrap_content"

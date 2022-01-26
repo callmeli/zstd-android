@@ -31,6 +31,8 @@ import java.security.MessageDigest
 const val ZSTD = "zstd"
 const val ZSTD_DICT = "zstd_dict"
 const val GZIP = "gzip"
+const val COMPRESS_FILE_PREFIX = "compress_"
+const val DECOMPRESS_FILE_PREFIX = "decompress_"
 
 class MainActivity : IFileKeeper, AppCompatActivity() {
     val testUrl =
@@ -69,6 +71,9 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findViewById<View>(R.id.tv_test_common).setOnClickListener {
             testZstdFile()
+        }
+        findViewById<View>(R.id.tv_test_dict_result_save_std).setOnClickListener {
+            dictResultSaveToStd()
         }
         findViewById<View>(R.id.tv_test_dict_http).setOnClickListener {
             httpTest(testUrl, "gzip,deflate,zstd", true)
@@ -125,6 +130,54 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
             "compress:$compress,\nDecompress:$deCompress"
     }
 
+    private fun dictResultSaveToStd() {
+        var parentDir = "$cacheSavePath/$ZSTD_DICT"
+        var compressList = File(parentDir).list().takeIf { it.isNotEmpty() }?.filter {
+            it.startsWith(DECOMPRESS_FILE_PREFIX)
+        }
+        compressList?.takeIf { it.isNotEmpty() }?.get(0)?.let {
+            val sourcePath = File(parentDir, it).absolutePath
+            val destDir = File("$cacheSavePath/$ZSTD")
+            if (!destDir.exists()) {
+                destDir.mkdirs()
+            } else if (destDir.list().isNotEmpty()) {
+                destDir.listFiles().all {
+                    it.delete()
+                }
+            }
+            val desFile = File(
+                destDir.absolutePath,
+                COMPRESS_FILE_PREFIX + it.substring(DECOMPRESS_FILE_PREFIX.length)
+            )
+            val deCompressDestFile = File(destDir.absolutePath, it)
+            var deFis: FileInputStream? = null
+            var deFos: FileOutputStream? = null
+            try {
+                deFis = FileInputStream(File(sourcePath))
+                deFos = FileOutputStream(deCompressDestFile)
+                deFos.write(deFis.readBytes())
+            } finally {
+                deFis?.close()
+                deFos?.close()
+            }
+            var fis: FileInputStream? = null
+            var fos: FileOutputStream? = null
+            try {
+                fis = FileInputStream(File(sourcePath))
+                fos = FileOutputStream(desFile.absolutePath)
+                val compress = cost {
+                    fos.write(Zstd.compress(fis.readBytes()))
+                }
+                resultTv.text =
+                    "compress:$compress"
+            } finally {
+                fis?.close()
+                fos?.close()
+            }
+        } ?: "未找到字典解压文件内容".toast(MainActivity@ this)
+
+    }
+
     class ZstdDecompress(
         var saveDecompressResponse: Boolean = true,
         var saveCompressResponse: Boolean = true,
@@ -151,8 +204,8 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                 saveCompressResponse.takeIf { it }.let {
                     if (inputBytes != null) {
                         val savePath = useDict.takeIf { it }?.let {
-                            fileKeeper.cacheDir() + "/" + ZSTD_DICT + "/compress_${name}"
-                        } ?: fileKeeper.cacheDir() + "/" + ZSTD + "/compress_${name}"
+                            fileKeeper.cacheDir() + "/" + ZSTD_DICT + "/$COMPRESS_FILE_PREFIX${name}"
+                        } ?: "${fileKeeper.cacheDir()}/$ZSTD/$COMPRESS_FILE_PREFIX${name}"
                         fileKeeper.save(
                             savePath,
                             inputBytes.copyOf()
@@ -174,8 +227,8 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                 saveDecompressResponse.takeIf { it }.let {
                     if (inputBytes != null) {
                         val savePath = useDict.takeIf { it }?.let {
-                            fileKeeper.cacheDir() + "/" + ZSTD_DICT + "/decompress_${name}"
-                        } ?: fileKeeper.cacheDir() + "/" + ZSTD + "/decompress_${name}"
+                            fileKeeper.cacheDir() + "/" + ZSTD_DICT + "/$DECOMPRESS_FILE_PREFIX${name}"
+                        } ?: fileKeeper.cacheDir() + "/" + ZSTD + "/$DECOMPRESS_FILE_PREFIX${name}"
                         fileKeeper.save(
                             savePath,
                             result.copyOf()
@@ -271,7 +324,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
     }
 
     override fun save(path: String, data: ByteArray) {
-        File(path).takeIf { !it.exists() }?.let {
+        File(path).let {
             if (!it.parentFile.exists()) {
                 it.parentFile.mkdirs()
             }
@@ -314,7 +367,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                     ?.let { path -> compressList.add(File(parentDir, path).absolutePath) }
             }
             var zstdContent: String? = null
-            var zstdRatio = 0
+            var zstdRatio = 0f
             val zstdCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
                 costOnly {
                     for (i in 0..testTimes) {
@@ -322,8 +375,8 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                             val sizeList = ArrayList<Int>()
                             zstdContent = item.zstdDecompress(null, sizeList)?.let { String(it) }
                             zstdRatio = sizeList.takeIf { it.size == 2 }?.let {
-                                sizeList[1] / sizeList[0]
-                            } ?: 0
+                                sizeList[1] / (sizeList[0]).toFloat()
+                            } ?: 0f
                         } else {
                             item.zstdDecompress(null)
                         }
@@ -338,7 +391,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                     ?.let { path -> compressList.add(File(parentDir, path).absolutePath) }
             }
             var zstdDictContent: String? = null
-            var zstdDictRatio = 0
+            var zstdDictRatio = 0f
             val zstdDictCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
                 costOnly {
                     for (i in 0..testTimes) {
@@ -347,8 +400,8 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                             zstdDictContent =
                                 item.zstdDecompress(dict, sizeList)?.let { String(it) }
                             zstdDictRatio = sizeList.takeIf { it.size == 2 }?.let {
-                                sizeList[1] / sizeList[0]
-                            } ?: 0
+                                sizeList[1] / (sizeList[0]).toFloat()
+                            } ?: 0f
                         } else {
                             item.zstdDecompress(dict)
                         }
@@ -364,7 +417,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
             }
             Log.e("cost", GZIP)
             var contentGzip: String? = null
-            var gzipRatio = 0
+            var gzipRatio = 0f
             val gzipCost = compressList.takeIf { it.isNotEmpty() }?.get(0)?.let { item ->
                 costOnly {
                     for (i in 0..testTimes) {
@@ -384,7 +437,7 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                                 )
                             val byteArray = gzipSource.readByteArray()
                             contentGzip = String(byteArray)
-                            gzipRatio = byteArray.size / inputByteArray.size
+                            gzipRatio = byteArray.size / inputByteArray.size.toFloat()
                             gzipSource.close()
                         } else {
                             val gzipSource =
@@ -395,9 +448,9 @@ class MainActivity : IFileKeeper, AppCompatActivity() {
                     }
                 }
             }
-            val contentDetails ="zstdContent:\n$zstdContent\n\n" +
-                        "zstdDictContent:\n$zstdDictContent\n\n" +
-                        "contentGzip:\n$contentGzip "
+            val contentDetails = "zstdContent:\n$zstdContent\n\n" +
+                    "zstdDictContent:\n$zstdDictContent\n\n" +
+                    "contentGzip:\n$contentGzip "
             withContext(Dispatchers.Main) {
                 resultTv.text =
                     "测试解压缩${testTimes}次对比\nzstd\n\t\tcost:$zstdCost,ratio:$zstdRatio,length:${zstdContent?.length}\nzstdDict\n\t\tcost:$zstdDictCost,ratio:$zstdDictRatio,length:${zstdDictContent?.length}\ngzip\n\t\tcost:$gzipCost,ratio:$gzipRatio,length:${contentGzip?.length}\n\n$contentDetails}"
@@ -412,6 +465,7 @@ fun Any.cost(method: () -> Any): Any {
     val result = method()
     return arrayListOf(SystemClock.currentThreadTimeMillis() - start, result)
 }
+
 fun Any.costOnly(method: () -> Any): Any {
     val start = SystemClock.currentThreadTimeMillis()
     val result = method()
